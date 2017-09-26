@@ -101,7 +101,7 @@ def RECEIVE_MESSAGE(op):
     try:
         if msg.contentType == 0:
             if "seto" in msg.text:
-                sendMessage(msg['from'], text="halo anak-anak...", contentMetadata=None, contentType=9)
+                sendMessage(getattr(msg,"from"), text="halo anak-anak...", contentMetadata=None, contentType=9)
             try:
                 if msg.to in wait['readPoint']:
                     if msg.from_ in wait["ROM"][msg.to]:
